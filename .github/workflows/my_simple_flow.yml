@@ -25,6 +25,7 @@ jobs:
   RunWindowsCommand:
     name: Run Windows Comamnd
     runs-on: windows-latest
+    needs: ["RunShellCommand"]
 
     steps:
       - name: Get directory using Powershell
