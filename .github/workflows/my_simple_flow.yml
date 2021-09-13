@@ -10,12 +10,26 @@ jobs:
     steps:
       - name: Echo a string
         run: echo "Hello World!!!"
+
       - name: Multiline script
         run: |
           node -v
           npm -v
+
       - name: Python command
         run: |
           import os 
           print(os.environ['PATH'])
         shell: python
+
+  RunWindowsCommand:
+    name: Run Windows Comamnd
+    runs-on: windows-latest
+
+    steps:
+      - name: Get directory using Powershell
+        run: Get-Location
+
+      - name: Get directory using Bash
+        run: pwd
+        shell: bash
