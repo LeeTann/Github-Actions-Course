@@ -1,6 +1,9 @@
 name: Actions Workflow
 
-on: [push]
+on:
+  push:
+  pull_request:
+    types: [closed, opened]
 
 jobs:
   RunGithubActions:
@@ -17,7 +20,7 @@ jobs:
           echo "{{ github.token }}"
 
       - name: Checkout Actions
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2 # checks out your repo so your workflow can access it
 
       - name: List Files After Checkout
         run: |
