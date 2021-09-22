@@ -1,7 +1,13 @@
+# Cron job is a schedule job.
+# Cron "* * * * *" min, hrs, day, month, day of week
+# https://crontab.guru/
+# Workflow has a min run of every 5mins. Can't do every minute.
+
 name: Actions Workflow
 
 on:
-  # push:
+  schedule:
+    - cron: "0/5 * * * *"
   pull_request:
     types: [closed, opened]
 
