@@ -1,0 +1,43 @@
+# Cron job is a schedule job.
+# Cron "* * * * *" min, hrs, day, month, day of week
+# https://crontab.guru/
+# Workflow has a min run of every 5mins. Can't do every minute.
+
+name: Actions Workflow
+
+on:
+  schedule:
+    - cron: "0/5 * * * *"
+  pull_request:
+    types: [closed, opened]
+
+jobs:
+  RunGithubActions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "{{ github.token }}"
+
+      - name: Checkout Actions
+        uses: actions/checkout@v2 # checks out your repo so your workflow can access it
+
+      - name: List Files After Checkout
+        run: |
+          pwd
+          ls -a
+
+      - name: Using a Simple JS Actions
+        id: greet # id is need for steps reference
+        uses: actions/hello-world-javascript-action@v1.1 # actions is username/ hello-world-javascript-action is repo/ version to ref
+        with:
+          who-to-greet: "Leeroy Jenkins"
+
+      - name: Log Greeting Time
+        run: echo "${{ steps.greet.outputs.time }}"
