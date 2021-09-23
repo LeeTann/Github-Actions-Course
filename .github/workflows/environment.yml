@@ -17,15 +17,15 @@ jobs:
         env:
           STEP_ENV: Available only in this steps
         run: |
-          echo "WF_ENV: ${WF_ENV}"
-          echo: "JOB_ENV: ${JOB_ENV}"
-          echo: "STEP_ENV: ${STEP_ENV}"
+          echo "WF_ENV: ${{ WF_ENV }}"
+          echo "JOB_ENV: ${{ JOB_ENV }}"
+          echo "STEP_ENV: ${{ STEP_ENV }}"
 
       - name: Echo Environment Var 2
         run: |
-          echo "WF_ENV: ${WF_ENV}"
-          echo "JOB_ENV: ${JOB_ENV}"
-          echo "STEP_ENV: ${STEP_ENV}"
+          echo "WF_ENV: ${{ WF_ENV }}"
+          echo "JOB_ENV: ${{ JOB_ENV }}"
+          echo "STEP_ENV: ${{ STEP_ENV }}"
 
   LogDefaultVar:
     name: Log Default Github Variables
@@ -34,12 +34,12 @@ jobs:
     steps:
       - name: Default Github Env Variable
         run: |
-          echo "RUNNER_OS	: ${RUNNER_OS}"
+          echo "RUNNER_OS: ${RUNNER_OS}"
           echo "GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}"
           echo "GITHUB_ACTION: ${GITHUB_ACTION}"
           echo "GITHUB_ACTIONS: ${GITHUB_ACTIONS}"
           echo "GITHUB_ACTOR: ${GITHUB_ACTOR}"
-          echo "GITHUB_REPOSITORY	: ${GITHUB_REPOSITORY	}"
+          echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY	}"
           echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
           echo "GITHUB_SHA: ${GITHUB_SHA}"
           echo "GITHUB_REF: ${GITHUB_REF}"
