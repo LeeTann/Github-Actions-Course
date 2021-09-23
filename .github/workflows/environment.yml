@@ -1,9 +1,12 @@
 name: Environment Variables
 
-on: push
+on:
+  push:
+    branches:
+      - master
 
 env:
-  WF_ENV: Available to all jobs
+  WF_ENV: ${{ secrets.WF_ENV }}
 
 jobs:
   LogEnvironmentVar:
