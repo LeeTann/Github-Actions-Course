@@ -6,8 +6,8 @@
 name: Cron Workflow
 
 on:
-  # schedule:
-  #   - cron: "0/5 * * * *"
+  schedule:
+    - cron: "0 0 1 * *"
   pull_request:
     types: [closed]
 

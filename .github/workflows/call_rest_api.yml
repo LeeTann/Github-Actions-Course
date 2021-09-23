@@ -5,8 +5,6 @@ on: [push]
 jobs:
   CreateIssue:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
 
     steps:
       - name: Push a Random File
