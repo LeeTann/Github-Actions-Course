@@ -8,13 +8,15 @@ jobs:
       image: node:14.18-buster
     steps:
       - name: Log Node Version
-        run: node -v
+        run: node -
+
       - name: Step with Docker
         uses: docker://node:16.10.0-alpine3.14
         with:
           entrypoint: "/bin/echo"
           args: "Hello World"
-      - name: Step with Docker
+
+      - name: Log Node Verion with Docker
         uses: docker://node:16.10.0-alpine3.14
         with:
           entrypoint: /usr/local/bin/node
