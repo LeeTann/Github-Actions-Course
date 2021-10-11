@@ -1,18 +1,17 @@
-# Cron job is a schedule job.
-# Cron "* * * * *" min, hrs, day, month, day of week
-# https://crontab.guru/
-# Workflow has a min run of every 5mins. Can't do every minute.
-
-name: Cron Workflow
+name: Filter by Branch Workflow
 
 on:
-  schedule:
-    - cron: "0 0 1 1 *"
-  pull_request:
+  push:
     branches:
       - master
-    types: [closed]
-
+      - "feature/*" # matches feature/featA but not feature/featA/some
+      - "feature/**" # matches feature/featA/something
+      - "!feature/featC" # ignores this branch
+    tags:
+      - v1.*
+    paths:
+      - "**.js" # workflow only runs js files
+      
 jobs:
   RunGithubActions:
     runs-on: ubuntu-latest
