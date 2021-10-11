@@ -11,6 +11,7 @@ on:
       - v1.*
     paths:
       - "**.js" # workflow only runs js files
+      
 jobs:
   RunGithubActions:
     runs-on: ubuntu-latest
