@@ -1,0 +1,14 @@
+name: Custom Hello World Action
+author: Lee Tann
+description: First custom JS action
+inputs:
+  who-to-greet:
+    description: "Who to greet"
+    required: true
+    default: Lee
+outputs:
+  time:
+    description: "The greeting time"
+runs:
+  using: "node12"
+  main: "index.js"
