@@ -1,0 +1,21 @@
+name: Docker Custom Hello World Action
+author: Lee Tann
+description: Docker custom JS action
+
+inputs:
+  who-to-greet:
+    description: "Who to greet"
+    required: true
+    default: Lee
+
+outputs:
+  time:
+    description: "The greeting time"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  # iamge: "docker://imagename:tagname" or "Dockerfile"
+  args:
+    - ${{ inputs.who-to-greet }}
+# when using docker, you have to define your inputs, pass it into the args array so they can be used in the entrypoint
