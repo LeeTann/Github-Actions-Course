@@ -8468,7 +8468,6 @@ async function run() {
         assignees: assignees ? assignees.split('\n') : undefined
     });
 
-    console.log(response.data);
     core.setOutput('issue', JSON.stringify(response.data))
 }
 
