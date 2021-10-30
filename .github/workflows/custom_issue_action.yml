@@ -20,4 +20,4 @@ jobs:
 
       - name: Echo Issue Output
         run: |
-          echo "Issue: ${{ steps.issue.outputs.issue_details }}"
+          echo "Issue: ${{ steps.issue.outputs.issue }}"
