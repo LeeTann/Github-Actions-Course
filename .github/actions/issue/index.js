@@ -13,7 +13,7 @@ async function run() {
     // You can also pass in additional options as a second parameter to getOctokit
     // const octokit = github.getOctokit(myToken, {userAgent: "MyActionVersion1"});
 
-    const response = await octokit.rest.pulls.get({
+    const response = await octokit.rest.issues.create({
         owner: github.context.repo.owner,
         repo: github.context.repo.repo,
         title,
