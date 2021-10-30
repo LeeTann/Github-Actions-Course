@@ -1,0 +1,23 @@
+name: Create A Github Issue
+on: push
+
+jobs:
+  CreateIssue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Actions
+        uses: actions/checkout@v2
+
+      - name: Run Custom Issue Action
+        uses: ./.github/actions/issue
+        id: issue
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: Title
+          body: Body
+          assignees: |
+            LeeTann
+
+      - name: Echo Issue Output
+        run: |
+          echo "Time: ${{ steps.issue.outputs.time }}"
