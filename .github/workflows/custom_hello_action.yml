@@ -1,4 +1,4 @@
-name: Test Custom Hello Action
+name: JavaScript Hello Action
 on: push
 
 jobs:
@@ -8,7 +8,7 @@ jobs:
       - name: Checkout Actions
         uses: actions/checkout@v2
 
-      - name: Execute Docker Hello Action
+      - name: JS Hello Action
         uses: ./.github/actions/hello
         id: hello
         with:

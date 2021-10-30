@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Execute Custom Issue Action
-        uses: ./.github/actions/hello-docker
+        uses: ./.github/actions/issue
         id: issue
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -20,4 +20,4 @@ jobs:
 
       - name: Echo Issue Output
         run: |
-          echo "Issue: ${{ steps.issue.outputs.issue }}"
+          echo "Time: ${{ steps.issue.outputs.time }}"
