@@ -2,7 +2,7 @@ name: JavaScript Hello Action
 on: push
 
 jobs:
-  DockerHello:
+  JavaScriptHello:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Actions
