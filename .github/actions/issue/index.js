@@ -16,8 +16,8 @@ async function run() {
     const response = await octokit.rest.issues.create({
         owner: github.context.repo.owner,
         repo: github.context.repo.repo,
-        title,
-        body,
+        title: title,
+        body: body,
         assignees: assignees ? assignees.split('\n') : undefined
     });
 

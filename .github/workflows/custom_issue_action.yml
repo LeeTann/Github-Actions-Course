@@ -13,8 +13,8 @@ jobs:
         id: issue
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          title: Title
-          body: Body
+          title: title
+          body: body
           assignees: |
             LeeTann
 
