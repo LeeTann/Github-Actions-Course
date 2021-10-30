@@ -8,7 +8,7 @@ jobs:
       - name: Checkout Actions
         uses: actions/checkout@v2
 
-      - name: Run Custom Issue Action
+      - name: Execute Custom Issue Action
         uses: ./.github/actions/issue
         id: issue
         with:
@@ -20,4 +20,4 @@ jobs:
 
       - name: Echo Issue Output
         run: |
-          echo "Time: ${{ steps.issue.outputs.time }}"
+          echo "Time: ${{ steps.issue.outputs.issue_details }}"

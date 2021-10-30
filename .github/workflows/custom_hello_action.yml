@@ -1,3 +1,4 @@
+name: Test Custom Hello Action
 on: push
 
 jobs:
