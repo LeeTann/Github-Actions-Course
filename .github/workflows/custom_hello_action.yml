@@ -8,11 +8,17 @@ jobs:
       - name: Checkout Actions
         uses: actions/checkout@v2
 
-      - name: JS Hello Action
-        uses: ./.github/actions/hello
+      # - name: JS Private Hello Action
+      #   uses: ./.github/actions/hello
+      #   id: hello
+      #   with:
+      #     who-to-greet: "world"
+
+      - name: JS Public Hello Action
+        uses: LeeTann/github-actions-open-issue@v1
         id: hello
         with:
-          who-to-greet: "world"
+          who-to-greet: "My Public Custom World"
 
       - name: Echo Hello
         run: |
